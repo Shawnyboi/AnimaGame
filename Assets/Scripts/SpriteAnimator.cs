@@ -17,7 +17,7 @@ public class SpriteAnimator : MonoBehaviour {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        ResetAllTriggers();
+        //ResetAllTriggers();
         if(Mathf.Abs(h) > 0.1 || Mathf.Abs(v) > 0.1)
         {
             animator.SetBool("isMoving", true);
@@ -33,22 +33,18 @@ public class SpriteAnimator : MonoBehaviour {
     {
         if(Mathf.Abs(horizontalDirection) > Mathf.Abs(verticalDirection) && horizontalDirection > 0)
         {
-            ResetAllTriggers();
             animator.SetTrigger("isRight");
         }
         if (Mathf.Abs(horizontalDirection) > Mathf.Abs(verticalDirection) && horizontalDirection < 0)
         {
-            ResetAllTriggers();
             animator.SetTrigger("isLeft");
         }
         if (Mathf.Abs(horizontalDirection) < Mathf.Abs(verticalDirection) && verticalDirection < 0)
         {
-            ResetAllTriggers();
             animator.SetTrigger("isDown");
         }
         if (Mathf.Abs(horizontalDirection) < Mathf.Abs(verticalDirection) && verticalDirection > 0)
         {
-            ResetAllTriggers();
             animator.SetTrigger("isUp");
         }
     }
